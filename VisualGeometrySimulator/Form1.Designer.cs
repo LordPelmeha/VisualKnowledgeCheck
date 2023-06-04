@@ -33,11 +33,14 @@
             ResultBox = new Label();
             AnswerBox = new TextBox();
             CorrectOrIncorrectButton = new Label();
+            HelpButton = new Button();
+            Greeting = new Label();
+            HelpText = new Label();
             SuspendLayout();
             // 
             // btnClickThis
             // 
-            btnClickThis.Location = new Point(100, 55);
+            btnClickThis.Location = new Point(85, 82);
             btnClickThis.Name = "btnClickThis";
             btnClickThis.Size = new Size(191, 29);
             btnClickThis.TabIndex = 0;
@@ -49,7 +52,7 @@
             // 
             lblText.AutoSize = true;
             lblText.BackColor = SystemColors.ButtonFace;
-            lblText.Location = new Point(313, 209);
+            lblText.Location = new Point(253, 224);
             lblText.Name = "lblText";
             lblText.Size = new Size(0, 20);
             lblText.TabIndex = 1;
@@ -58,7 +61,7 @@
             // ResultBox
             // 
             ResultBox.AutoSize = true;
-            ResultBox.Location = new Point(289, 401);
+            ResultBox.Location = new Point(49, 184);
             ResultBox.Name = "ResultBox";
             ResultBox.Size = new Size(0, 20);
             ResultBox.TabIndex = 2;
@@ -66,7 +69,7 @@
             // 
             // AnswerBox
             // 
-            AnswerBox.Location = new Point(754, 87);
+            AnswerBox.Location = new Point(253, 247);
             AnswerBox.Name = "AnswerBox";
             AnswerBox.Size = new Size(125, 27);
             AnswerBox.TabIndex = 3;
@@ -74,10 +77,38 @@
             // CorrectOrIncorrectButton
             // 
             CorrectOrIncorrectButton.AutoSize = true;
-            CorrectOrIncorrectButton.Location = new Point(994, 235);
+            CorrectOrIncorrectButton.Location = new Point(262, 277);
             CorrectOrIncorrectButton.Name = "CorrectOrIncorrectButton";
             CorrectOrIncorrectButton.Size = new Size(0, 20);
             CorrectOrIncorrectButton.TabIndex = 5;
+            // 
+            // HelpButton
+            // 
+            HelpButton.BackColor = SystemColors.ControlLight;
+            HelpButton.Location = new Point(694, 134);
+            HelpButton.Name = "HelpButton";
+            HelpButton.Size = new Size(94, 29);
+            HelpButton.TabIndex = 6;
+            HelpButton.Text = "Подсказка";
+            HelpButton.UseVisualStyleBackColor = false;
+            HelpButton.Click += HelpButton_Click;
+            // 
+            // Greeting
+            // 
+            Greeting.AutoSize = true;
+            Greeting.Location = new Point(23, 9);
+            Greeting.Name = "Greeting";
+            Greeting.Size = new Size(683, 20);
+            Greeting.TabIndex = 7;
+            Greeting.Text = "Добро пожаловать! Сейчас вы пройдете тест на ваши знания по алгебре и немного геометрии!";
+            // 
+            // HelpText
+            // 
+            HelpText.AutoSize = true;
+            HelpText.Location = new Point(483, 254);
+            HelpText.Name = "HelpText";
+            HelpText.Size = new Size(0, 20);
+            HelpText.TabIndex = 8;
             // 
             // Form1
             // 
@@ -86,7 +117,10 @@
             BackColor = SystemColors.Control;
             BackgroundImage = Properties.Resources.image;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1295, 462);
+            ClientSize = new Size(892, 379);
+            Controls.Add(HelpText);
+            Controls.Add(Greeting);
+            Controls.Add(HelpButton);
             Controls.Add(CorrectOrIncorrectButton);
             Controls.Add(AnswerBox);
             Controls.Add(ResultBox);
@@ -108,5 +142,8 @@
         private TextBox answerBox;
         private Label CorrectOrIncorrectButton;
         private TextBox AnswerBox;
+        private Button HelpButton;
+        private Label Greeting;
+        private Label HelpText;
     }
 }

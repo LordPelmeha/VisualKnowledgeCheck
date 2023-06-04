@@ -27,20 +27,20 @@ namespace VisualGeometrySimulator
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Greeting.Text = "";
             if (Questions.Count > 0)
             {
                 var x = Questions.First().Split('|');
-                lblText.Text = Questions.First().ToString();
+                lblText.Text = x[0];
                 btnClickThis.Text = Questions.Count > 1 ? "Следующий вопрос" : "Завершить тест";
 
-                if (GoodAnswer == AnswerBox.Text )
+                if (GoodAnswer == AnswerBox.Text)
                 {
                     correctAnswers++;
-                    CorrectOrIncorrectButton.Text = $"Верно! {correctAnswers} {wrongAnswers}    {GoodAnswer} {AnswerBox.Text}";
-
+                    CorrectOrIncorrectButton.Text = $"Верно! {correctAnswers} {wrongAnswers}";
                 }
 
-                else
+                else if (Questions.Count < 12)
                 {
                     wrongAnswers++;
                     CorrectOrIncorrectButton.Text = $"Неверно! {correctAnswers} {wrongAnswers}";
@@ -48,12 +48,9 @@ namespace VisualGeometrySimulator
                 AnswerBox.Clear();
                 GoodAnswer = x[1].ToString();
                 Questions = Questions.Skip(1).ToList();
-
             }
             else
-                ResultBox.Text = $"{correctAnswers} {wrongAnswers}";
-
-
+                ResultBox.Text = $"Вот ваш резульата:\nПравильных ответов - {correctAnswers}\nНепрвильных ответов - {wrongAnswers}";
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -62,6 +59,11 @@ namespace VisualGeometrySimulator
         }
 
         private void label1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void HelpButton_Click(object sender, EventArgs e)
         {
 
         }
